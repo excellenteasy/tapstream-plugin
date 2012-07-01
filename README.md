@@ -1,5 +1,5 @@
 # Tapstream API via JavaScript/Cordova
-Author: Stephan Bönnemann | @boennemann
+Author: Stephan Bönnemann | [@boennemann](http://twitter.com/boennemann)
 
 If you aren't familiar with [Tapstream](http://tapstream.com/) visit their Website and read through the Developer section.
 
@@ -7,27 +7,32 @@ If you aren't familiar with [Tapstream](http://tapstream.com/) visit their Websi
 
 1. Drop the `Tapstream.framework` into Xcode. Make sure you check `Create group for any given folders` & `Copy items into destination group's folder (if needed)`. 
 2. Drop the `TapstreamPlugin.h` & `TapstreamPlugin.m` files into your `Plugins` folder. (Check same boxes as before)
-3. Go to your `AppDelegate.m` and add the following at the beginning of the file
-		#import "Tapstream/Tapstream.h"
+3. Go to your `AppDelegate.m` and add the following at the beginning of the file:
+    `#import "Tapstream/Tapstream.h"`
 4. Go to the `application:didFinishLaunchingWithOptions` method in the same file and add the following (replace the arguments of course):
-		[[Tapstream shared] setAccountName:@"TAPSTREAM_ACCOUNT_NAME" developerSecret:@"DEV_SECRET_KEY"];
-5. Add `TapstreamPlugin` & `TapstreamPlugin` in the plugins section of your `Cordova.plist
+    `[[Tapstream shared] setAccountName:@"TAPSTREAM_ACCOUNT_NAME" developerSecret:@"DEV_SECRET_KEY"];`
+5. Add `TapstreamPlugin` & `TapstreamPlugin` in the plugins section of your `Cordova.plist`.
 6. Embed the `TapstreamPlugin.js` file inside of your App.
 
 # Usage
 
 You may now use the `fireEvent` method like so:
-		plugins.TapstreamPlugin.fireEvent('conversion');
+
+    plugins.TapstreamPlugin.fireEvent('conversion');
+
 If you want to fire a oneTimeOnly Event do it like so:
-		plugins.TapstreamPlugin.fireEvent('conversion',true);
+
+    plugins.TapstreamPlugin.fireEvent('conversion',true);
 
 # License
 
-Please be aware that the `Tapstream.framework` is the intellectual property of 2012 Paperlabs Inc. All rights reserved. Created by Benjamin Fox. 
+Please be aware that the `Tapstream.framework` is intellectual property of 2012 Paperlabs Inc. All rights reserved. Created by Benjamin Fox. 
 I included it inside of this repo just for convenience.
 You may always download it at https://tapstream.com/sdk/ios/ .
 Documentation may be found here: https://tapstream.com/developer/ios_sdk_documentation/
 
+I'm not related to Tapstream/Paperlabs in any kind of way.
+(Except being a happy customer)
 
 The MIT License
 
