@@ -13,7 +13,7 @@ function TapstreamPlugin() {};
 TapstreamPlugin.prototype.fireEvent = function(eventName /* String */, oneTimeOnly /* Boolean*/) {
   var options = {
     eventName: eventName,
-    oneTimeOnly: typeof oneTimeOnly != 'undefined' ? !!oneTimeOnly : false
+    oneTimeOnly: Boolean(oneTimeOnly)
   };
   return cordovaRef.exec("TapstreamPlugin.fireEvent",options);
 };
